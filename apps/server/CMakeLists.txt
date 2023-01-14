@@ -1,0 +1,10 @@
+cppstruct_app_console(
+	server
+)
+cppstruct_app_headers(
+	server
+)
+cppstruct_app_sources(
+	server
+	main.cpp
+)
