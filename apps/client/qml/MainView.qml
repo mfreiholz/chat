@@ -17,4 +17,17 @@ Item {
 			color: "green"
 		}
 	}
+
+    Item {
+        id: contentArea
+        anchors.top: parent.top
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
+        anchors.left: leftbar.right
+
+        ServerView {
+            id: contentView
+            anchors.fill: parent
+        }
+    }
 }

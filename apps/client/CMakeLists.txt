@@ -40,6 +40,7 @@ target_sources(
 
 target_link_libraries(
 	${app_name}
+        PRIVATE coreqt
 	PRIVATE core
 )
 
