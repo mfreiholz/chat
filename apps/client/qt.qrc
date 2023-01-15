@@ -6,5 +6,6 @@
         <file>qml/MainView.qml</file>
         <file>qml/DefaultUserList.qml</file>
         <file>qml/ServerView.qml</file>
+        <file>qml/ServerChannelList.qml</file>
     </qresource>
 </RCC>
