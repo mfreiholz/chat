@@ -11,23 +11,48 @@ Item {
 		anchors.bottom: parent.bottom
 		anchors.left: parent.left
 		implicitWidth: 80
+		color: Theme.serverSelectionBackgroundColor
 
-		Rectangle {
+		ServerSelectionView {
+			id: serverSelection
 			anchors.fill: parent
-			color: "green"
 		}
 	}
 
-    Item {
-        id: contentArea
-        anchors.top: parent.top
-        anchors.right: parent.right
-        anchors.bottom: parent.bottom
-        anchors.left: leftbar.right
+	Item {
+		id: contentArea
+		anchors.top: parent.top
+		anchors.right: parent.right
+		anchors.bottom: parent.bottom
+		anchors.left: leftbar.right
 
-        ServerView {
-            id: contentView
-            anchors.fill: parent
-        }
-    }
+		Loader {
+			id: serverViewLoader
+			anchors.fill: parent
+			sourceComponent: serverViewComp
+		}
+	}
+
+	Connections {
+		target: serverSelection
+
+		function onSelectionChanged(obj) {
+			console.log("test: " + obj)
+		}
+	}
+
+	Component {
+		id: noSelectionComp
+
+		Item {}
+	}
+
+	Component {
+		id: serverViewComp
+
+		ServerView {
+			id: contentView
+			anchors.fill: parent
+		}
+	}
 }
